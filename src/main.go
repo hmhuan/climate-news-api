@@ -1,13 +1,10 @@
 package main
 
 import (
-	"fmt"
-	"io/ioutil"
 	"log"
 	"net/http"
-	"strings"
 
-	"golang.org/x/net/html"
+	api "api"
 )
 
 func main() {
@@ -21,11 +18,16 @@ func main() {
 
 	defer resp.Body.Close()
 
-	body, err := ioutil.ReadAll(resp.Body)
+	// body, err := ioutil.ReadAll(resp.Body)
 
 	// fmt.Println(string(body))
 
-	htmlDoc, err := html.Parse(strings.NewReader(string(body)))
+	// htmlDoc, err := html.Parse(strings.NewReader(string(body)))
 
-	fmt.Println(htmlDoc.Data)
+	// fmt.Println(htmlDoc.Data)
+
+	api.InitClimateAPI()
+
+	api.HelloWold()
+
 }
