@@ -2,7 +2,10 @@ module github.com/hmhuan/climate-news-api
 
 go 1.16
 
-require golang.org/x/net v0.0.0-20211015210444-4f30a5c0130f // indirect
+require (
+	api v1.0.0
+	github.com/gin-gonic/gin v1.7.4
+	golang.org/x/sys v0.0.0-20210423082822-04245dca01da // indirect
+)
 
-require api v1.0.0
-replace api v1.0.0 => "./src/api"
+replace api v1.0.0 => ./src/api

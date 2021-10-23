@@ -5,6 +5,8 @@ import (
 	"net/http"
 
 	api "api"
+
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
@@ -29,5 +31,10 @@ func main() {
 	api.InitClimateAPI()
 
 	api.HelloWold()
+
+	router := gin.Default()
+	router.GET("/v1/health", api.HealthCheck)
+
+	router.Run("localhost:8080")
 
 }
